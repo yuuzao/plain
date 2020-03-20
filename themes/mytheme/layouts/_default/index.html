@@ -1,0 +1,23 @@
+{{ partial "header" . }}
+{{ partial "sidebar" . }}
+{{ partial "sitetitle" . }}
+<main>
+    {{ range (.Site.RegularPages.GroupByParam "categories") }}
+    <ul>
+        <li>
+            <h3>{{ .Key }}</h3>
+            <ul>
+                {{ range (where .Pages "Type" "post") }}
+                <li>
+                    {{ .PublishDate.Format "02 Jan" }}
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </li>
+                {{ end }}
+        </li>
+    </ul>
+    </ul>
+    {{ end }}
+</main>
+
+
+{{ partial "footer" . }}
