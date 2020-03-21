@@ -5,11 +5,11 @@
     {{ range (.Site.RegularPages.GroupByParam "categories") }}
     <ul>
         <li>
-            <h3>{{ .Key }}</h3>
+            <h3 class="category"><span>&#9839</span>{{ .Key }}</h3>
             <ul>
                 {{ range (where .Pages "Type" "post") }}
                 <li>
-                    {{ .PublishDate.Format "02 Jan" }}
+                    {{ .PublishDate.Format "2006-01-10 -- " }}
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </li>
                 {{ end }}

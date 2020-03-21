@@ -4,30 +4,9 @@
 <head>
     <meta charset="utf-8">
     <base href="{{ .Site.BaseURL }}">
-    <style type="text/css">
-        #sidebar ul {
-            margin: 0;
-            float: right;
-        }
-
-        #sidebar li {
-            display: inline;
-        }
-
-        main {
-            margin-top: 50px;
-        }
-
-        main ul {
-            list-style-type: none;
-        }
-
-        footer {
-            margin-top: 50px;
-            text-align: center;
-
-        }
-    </style>
+    {{ range .Site.Params.customCSS -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+    {{- end }}
     <title> {{ .Title }} : spf13.com </title>
 
 </head>

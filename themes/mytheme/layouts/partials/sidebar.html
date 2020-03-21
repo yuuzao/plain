@@ -1,19 +1,21 @@
 <!-- sidebar start -->
 <div id="sidebar">
-    <a href="/">一颗鱼藻的意识流</a>
+    {{ range .Site.Params.logo }}
+    <a href="/"><img src="{{ . | absURL}}" alt="logo" id="logo"></a>
+    {{ end }}
     <ul>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
         {{ if .HasChildren }}
-        <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+        <li>
             <a href="#">
                 {{ .Pre }}
                 <span>{{ .Name }}</span>
             </a>
         </li>
-        <ul class="sub-menu">
+        <ul>
             {{ range .Children }}
-            <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+            <li>
                 <a href="{{ .URL }}">{{ .Name }}</a>
             </li>
             {{ end }}
