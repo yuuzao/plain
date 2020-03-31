@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <base href="{{ .Site.BaseURL }}">
+    {{ range .Site.Params.customCSS -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+    {{- end }}
+    <title> {{ .Title }} </title>
+
+</head>
+
+<body lang="en" , style="width: 800px; margin:auto;">
