@@ -837,6 +837,7 @@ a:hover {
 #sidebar li {
     display: inline;
     font-family: serif;
+    margin-right: 5px;
 }
 
 #logo {
@@ -872,6 +873,10 @@ main .category span {
 
 main ul {
     list-style-type: none;
+}
+
+main ul .post {
+    margin-bottom: 5px;
 }
 
 footer {
